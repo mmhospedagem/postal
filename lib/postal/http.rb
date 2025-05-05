@@ -45,7 +45,7 @@ module Postal
         request.add_field "X-Postal-Signature-256", Postal.signer.sign64(request.body.to_s)
       end
 
-      request["User-Agent"] = options[:user_agent] || "Postal/#{Postal.version}"
+      request["User-Agent"] = options[:user_agent] || "MVO/#{Postal.version}"
 
       connection = Net::HTTP.new(uri.host, uri.port)
 

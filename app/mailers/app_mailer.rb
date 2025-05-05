@@ -31,7 +31,7 @@ class AppMailer < ApplicationMailer
   end
 
   def test_message(recipient)
-    mail to: recipient, subject: "Postal SMTP Test Message"
+    mail to: recipient, subject: "MVO SMTP Test Message"
   end
 
 end
