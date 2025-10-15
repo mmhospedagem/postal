@@ -7,6 +7,19 @@ Rails.application.routes.draw do
   match "/api/v1/messages/message" => "legacy_api/messages#message", via: [:get, :post, :patch, :put]
   match "/api/v1/messages/deliveries" => "legacy_api/messages#deliveries", via: [:get, :post, :patch, :put]
 
+  #######################################################################################################
+  # API MMHospedagem
+  #######################################################################################################
+
+  # Credentials (API Keys)
+  match "/api/v1/credentials" => "legacy_api/credentials#index", via: [:get]
+  match "/api/v1/credentials" => "legacy_api/credentials#create", via: [:post]
+  match "/api/v1/credentials/:id" => "legacy_api/credentials#show", via: [:get]
+  match "/api/v1/credentials/:id" => "legacy_api/credentials#update", via: [:put, :patch]
+  match "/api/v1/credentials/:id" => "legacy_api/credentials#destroy", via: [:delete]
+
+  #######################################################################################################
+
   scope "org/:org_permalink", as: "organization" do
     resources :domains, only: [:index, :new, :create, :destroy] do
       match :verify, on: :member, via: [:get, :post]
