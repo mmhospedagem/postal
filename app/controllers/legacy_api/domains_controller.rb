@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class LegacyApi::DomainsController < LegacyApi::BaseController
+class LegacyAPI::DomainsController < LegacyAPI::BaseController
 
   def index
     domains = @server.domains.includes(:dns_checks)

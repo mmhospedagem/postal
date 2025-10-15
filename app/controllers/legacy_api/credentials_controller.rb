@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class LegacyApi::CredentialsController < LegacyApi::BaseController
+class LegacyAPI::CredentialsController < LegacyAPI::BaseController
 
   def index
     credentials = @server.credentials
